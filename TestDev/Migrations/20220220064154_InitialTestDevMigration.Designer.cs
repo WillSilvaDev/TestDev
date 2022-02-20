@@ -11,8 +11,8 @@ using TestDev.Helpers;
 namespace TestDev.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220215092926_ITestMigration")]
-    partial class ITestMigration
+    [Migration("20220220064154_InitialTestDevMigration")]
+    partial class InitialTestDevMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,10 +26,7 @@ namespace TestDev.Migrations
             modelBuilder.Entity("TestDev.Model.User", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Body")
                         .IsRequired()
